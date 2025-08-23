@@ -1,0 +1,398 @@
+// Всі правила @use повинні бути на початку файлу
+@import 'helpers/vars'
+@import 'helpers/mixins'
+@import 'components/header'
+@import 'components/footer'
+// before
+// Після правил @use йдуть стилі
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 1px
+
+body
+    font-size: 14rem
+
+    
+main
+    padding: 50px 0px
+
+.fun
+    font-weight: bold
+    color: red
+
+.bg
+    padding: 30px 0
+    background-color: #f8f8f8
+
+h2
+    font-size: 20rem
+    line-height: 24rem
+    text-transform: uppercase
+    color: #555
+    font-weight: 400
+    font-family: "Montserrat"
+    text-align: center
+span
+    display: block
+    font-size: 16rem
+    line-height: 24rem
+    color: #555
+    font-weight: 400
+    font-family: "Roboto Slab"
+    text-align: center
+
+.flex
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.evenly
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    padding: 60px 0
+
+.wrapper
+    width: 80%
+    margin: auto
+
+.hidden
+    display: none
+
+.service
+    h2
+        font-size: 20rem
+        line-height: 24rem
+        text-transform: uppercase
+        color: #555
+        font-weight: 400
+        font-family: "Montserrat"
+        text-align: center
+    span
+        display: block
+        font-size: 16rem
+        line-height: 24rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+    span::before
+        content: ""
+        display: block
+        width: 40px
+        height: 2px
+        background: #555
+        margin: 20px auto
+.cards
+    display: flex
+    +media(320)
+        flex-direction: column
+    +media(768)
+        flex-direction: row
+        justify-content: space-around
+.cardTop
+    position: relative
+    +media(320)
+        width: 100%
+    +media(768)
+        width: 30%
+    >*
+        display: block
+        padding: 10px 0
+    img
+        position: inherit
+        left: 32%
+        // width: 90px
+        // height: 90px
+    span
+        font-size: 14rem
+        line-height: 24rem
+        text-transform: uppercase
+        color: #555
+        font-weight: 400
+        font-family: "Montserrat"
+        text-align: center
+
+    p
+        font-size: 14rem
+        line-height: 24rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+
+.aboutUs
+    h2
+        font-size: 20rem
+        line-height: 24rem
+        text-transform: uppercase
+        color: #555
+        font-weight: 400
+        font-family: "Montserrat"
+        text-align: center
+    span
+        display: block
+        font-size: 16rem
+        line-height: 24rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+    span::before
+        content: ""
+        display: block
+        width: 40px
+        height: 2px
+        background: #555
+        margin: 20px auto
+
+.description
+    display: flex
+    justify-content: center
+    padding: 40px 0
+    p
+        width: 600px
+        font-size: 14rem
+        line-height: 24rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        +media(320)
+            width: 100%
+            padding: 20px 0
+            text-align: center
+        +media(768)
+            width: 600px
+
+.humans
+    display: flex
+    justify-content: space-evenly
+    .cardHuman
+        >*
+            display: block
+            text-align: center
+        .name
+            font-size: 14rem
+            line-height: 24rem
+            text-transform: uppercase
+            color: #555
+            font-family: "Myriad Pro"
+        .pos
+            font-size: 13rem
+            line-height: 24rem
+            color: #555
+            font-weight: 400
+            font-family: "Roboto Slab"
+
+.latwork
+    padding: 50px 0
+    h2::after
+        content: ""
+        display: block
+        width: 40px
+        height: 2px
+        background: #555
+        margin: 20px auto
+    form
+        display: flex
+        justify-content: center
+        input
+            display: none
+        label
+            font-size: 16rem
+            line-height: 24rem
+            color: #555
+            font-weight: 400
+            font-family: "Roboto Slab"
+            text-align: center
+            padding: 0 15px
+        input[type="radio"]:checked + label
+            color: #c0301c
+
+.shop
+    display: grid
+    grid-template-columns: 32% 32% 26%
+    grid-template-rows: 36% 36%
+    justify-content: center
+    .cardMain
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 350px
+        height: 320px
+        background-image: url(../img/hair.png)
+        position: relative
+        .ss
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: absolute
+            background: rgba(255, 0, 0, 0.4)
+            color: white
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            opacity: 0
+            height: 100%
+            width: 98%
+            transform: scale(1.1)
+            transition: opacity 0.4s ease, transform 0.4s ease
+    .cardMain:hover .ss
+        opacity: 1
+        transform: scale(1)
+
+        a
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+        h3
+            font-size: 18rem
+            line-height: 24rem
+            color: #fff
+            font-weight: 400
+            font-family: "Montserrat"
+            text-align: center
+        span
+            padding: 15px 0
+            font-size: 12rem
+            line-height: 24rem
+            color: #fff
+            font-weight: 400
+            font-family: "Roboto Slab"
+            text-align: center
+        button
+            padding: 10px 35px
+            background-color: #fff
+            font-size: 14rem
+            letter-spacing: 1rem
+            line-height: 24rem
+            border: none
+            text-transform: uppercase
+            color: #c0301c
+            font-weight: 400
+            font-family: "Roboto Slab"
+            text-align: center
+
+.talking
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 50px 0
+    padding: 35px 0
+    background-image: url("../img/lastbg.webp")
+    background-repeat: round
+    >*
+        padding: 5px 0
+    h2
+        font-size: 30rem
+        line-height: 44rem
+        color: #fff
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+    button
+        font-size: 18rem
+        line-height: 44rem
+        text-transform: uppercase
+        background-color: transparent
+        border: 1px solid #fff
+        padding: 5px 10px
+        color: #fff
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+
+.blogposts
+    .zxc
+        padding: 35px 0
+    h2
+        font-size: 20rem
+        line-height: 24rem
+        text-transform: uppercase
+        color: #555
+        font-weight: 400
+        font-family: "Montserrat"
+        text-align: center
+    span
+        font-size: 16rem
+        line-height: 24rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+    .posts
+        position: relative
+        &::before
+            content: ""
+            border: 1px solid #ddd
+            width: 100%
+            position: absolute
+            top: 50%
+        >*
+            padding: 10px 0
+        .blockPost
+            display: flex
+            &:hover
+                h3,
+                i,
+                a
+                    color: #c0301c !important
+            .imgblock
+                display: inline-block
+            .mainInfo
+                padding: 0 35px
+                .pop
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                p
+                    font-size: 14rem
+                    line-height: 24rem
+                    color: #555
+                    font-weight: 400
+                    font-family: "Roboto Slab"
+                .dateSpan
+                    display: table-caption
+                    padding: 10px
+                    font-size: 24rem
+                    letter-spacing: 2rem
+                    line-height: 20rem
+                    text-transform: uppercase
+                    color: #777
+                    font-weight: 700
+                    font-family: "Montserrat"
+                    text-align: center
+                    border: 2px solid #555
+                h3
+                    font-size: 16rem
+                    line-height: 24rem
+                    text-transform: uppercase
+                    color: #555
+                    font-weight: 400
+                    font-family: "Montserrat"
+                i
+                    display: block
+                    text-align: left
+                    font-size: 13rem
+                    line-height: 24rem
+                    color: #777
+                    font-weight: 400
+                    font-family: "Roboto Slab"
+                .read
+                    font-size: 13rem
+                    letter-spacing: 1rem
+                    line-height: 24rem
+                    text-transform: uppercase
+                    color: #777
+                    font-weight: 700
+                    font-family: "Roboto Slab"
+                    text-align: center

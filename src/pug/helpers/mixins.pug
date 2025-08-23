@@ -1,0 +1,32 @@
+mixin cardTop(imgPath, spanText, alt, description)
+  .cardTop
+    img(src=imgPath, alt=alt)
+    span= spanText
+    p= description
+
+  mixin humanCard(img, alt, name, position)
+    .cardHuman
+      img(src=img alt=alt)
+      span.name= name
+      span.pos= position
+
+mixin mainCard(special, span)
+  .cardMain
+    a(href="#")  
+    .ss 
+      h3= special
+      span= span 
+      button viem 
+
+mixin blockPost(img, alt, dateSpan, title, creator, text)
+    .blockPost
+      .imgblock
+        img(src=img, alt=alt)
+      .mainInfo
+        .blocktwo
+          p.dateSpan= dateSpan
+          h3= title
+          i= creator
+        p= text
+        a.read(href="#") Read more     
+        
