@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector(".header");
 
-    document.addEventListener("mousemove", (e) => {
-        if (!header) return
-
-        const x = (e.clientX / window.innerWidth - 0.5) * 20,
-            y = (e.clientY / window.innerHeight - 0.5) * 20
+    header.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth + 0.5) * 50,
+            y = (e.clientY / window.innerHeight + 0.5) * 50
 
         header.style.backgroundPosition = `calc(50% + ${x}px) calc(50% + ${y}px)`;
     })
@@ -258,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const tracks = document.querySelector(".companys"),
-         clone = tracks.innerHTML
+        clone = tracks.innerHTML
     tracks.innerHTML += clone
 
     let scrollPos = 0
@@ -348,3 +346,4 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 })
+
