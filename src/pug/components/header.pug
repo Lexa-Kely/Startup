@@ -1,19 +1,19 @@
-header.header 
+header.header#home 
     .wrapper 
         .flex
             .logo
                 h1 Startup
             .burger#burger 
-            span
+                span
             .menu
                 ul
-                    li: a(href="#") Home
-                    li: a(href="#") Services
-                    li: a(href="#") About
-                    li: a(href="#") Works
-                    li: a(href="#") Blog
-                    li: a(href="#") Clients
-                    li: a(href="#") Contact
+                    li: a(href="#home") Home
+                    li: a(href="#Services") Services
+                    li: a(href="#About") About
+                    li: a(href="#Works") Works
+                    li: a(href="#Blog") Blog
+                    li: a(href="#Clients") Clients
+                    li: a(href="#Contact") Contact
 
 
         .welcome 
@@ -21,3 +21,11 @@ header.header
             span Your Favourite Creative Agency Template
             .center 
                 button  Get Started
+    #popupAuth.popup-auth(style='display:none;')
+        .auth-content
+            h2 Login
+            .blocks
+            .block(data-order='1') 1
+            .block(data-order='2') 2
+            .block(data-order='3') 3
+            button#checkSequence Enter

@@ -25,8 +25,21 @@ mixin blockPost(img, alt, dateSpan, title, creator, text)
       .mainInfo
         .blocktwo
           p.dateSpan= dateSpan
-          h3= title
-          i= creator
+          .block
+            h3= title
+            i= creator
         p= text
         a.read(href="#") Read more     
         
+mixin qwe(text, author)
+  .g 
+    i= text 
+  .aut 
+    span=author
+mixin contact(h3text, spanone, spantwo)
+ .contact 
+  svg(width='35' height='35' fill='black' stroke='white')
+    use(href='#twitter-icon')
+  h3= h3text
+  span= spanone 
+  span= spantwo 

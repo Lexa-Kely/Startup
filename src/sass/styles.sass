@@ -16,9 +16,8 @@ html
 body
     font-size: 14rem
 
-    
 main
-    padding: 50px 0px
+    padding: 50px 0 0 0
 
 .fun
     font-weight: bold
@@ -95,7 +94,6 @@ span
         flex-direction: row
         justify-content: space-around
 .cardTop
-    position: relative
     +media(320)
         width: 100%
     +media(768)
@@ -104,8 +102,7 @@ span
         display: block
         padding: 10px 0
     img
-        position: inherit
-        left: 32%
+        margin: 20px auto
         // width: 90px
         // height: 90px
     span
@@ -152,8 +149,13 @@ span
 
 .description
     display: flex
-    justify-content: center
     padding: 40px 0
+    +media(320)
+        flex-direction: column
+    +media(768)
+        flex-direction: row
+        justify-content: center
+
     p
         width: 600px
         font-size: 14rem
@@ -168,10 +170,21 @@ span
         +media(768)
             width: 600px
 
+.slider-window
+    width: 100%
+    overflow: hidden
+
+.slider-track
+    display: flex
+    transition: transform 0.5s
+
 .humans
     display: flex
     justify-content: space-evenly
     .cardHuman
+        min-width: 200px
+        margin: 10px
+        text-align: center
         >*
             display: block
             text-align: center
@@ -214,10 +227,17 @@ span
             color: #c0301c
 
 .shop
-    display: grid
-    grid-template-columns: 32% 32% 26%
-    grid-template-rows: 36% 36%
-    justify-content: center
+    +media(320)
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 20px 0
+    +media(1024)
+        display: grid
+        grid-template-columns: 32% 32% 26%
+        grid-template-rows: 36% 36%
+        justify-content: center
+        padding: 0 0 100px 0
     .cardMain
         display: flex
         align-items: center
@@ -226,6 +246,8 @@ span
         height: 320px
         background-image: url(../img/hair.png)
         position: relative
+        +media(320)
+            margin: 20px 0
         .ss
             display: flex
             flex-direction: column
@@ -327,23 +349,31 @@ span
         font-weight: 400
         font-family: "Roboto Slab"
         text-align: center
+    h2::after
+        content: ""
+        display: block
+        width: 40px
+        height: 2px
+        background: #555
+        margin: 20px auto
     .posts
-        position: relative
-        &::before
-            content: ""
-            border: 1px solid #ddd
-            width: 100%
-            position: absolute
-            top: 50%
         >*
             padding: 10px 0
         .blockPost
             display: flex
+            +media(320)
+                flex-direction: column
+                align-items: center
             &:hover
                 h3,
                 i,
                 a
                     color: #c0301c !important
+            .blocktwo
+                display: flex
+                align-items: center
+                +media(320)
+                    flex-direction: column
             .imgblock
                 display: inline-block
             .mainInfo
@@ -355,11 +385,14 @@ span
                     width: 100%
                     height: 100%
                 p
+                    padding: 25px 0
                     font-size: 14rem
                     line-height: 24rem
                     color: #555
                     font-weight: 400
                     font-family: "Roboto Slab"
+                    +media(320)
+                        text-align: center
                 .dateSpan
                     display: table-caption
                     padding: 10px
@@ -371,7 +404,12 @@ span
                     font-weight: 700
                     font-family: "Montserrat"
                     text-align: center
+                    width: 95px
                     border: 2px solid #555
+                    +media(320)
+                    margin: 20px 0
+                .block
+                    padding: 0 20px
                 h3
                     font-size: 16rem
                     line-height: 24rem
@@ -396,3 +434,111 @@ span
                     font-weight: 700
                     font-family: "Roboto Slab"
                     text-align: center
+                    +media(320)
+                        display: block
+
+.gray
+    background-color: #f8f8f8
+    padding: 50px 0
+    .companys
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        img
+            +media(320)
+                padding: 0 65px
+            +media(768)
+                padding: 0
+    .qwe
+        padding: 20px
+        margin: auto
+        font-size: 18rem
+        line-height: 30rem
+        color: #555
+        font-weight: 400
+        font-family: "Roboto Slab"
+        text-align: center
+        +media(320)
+            width: 100%
+        +media(768)
+            width: 50%
+
+        input
+            display: none
+        label
+            display: inline-block
+            margin: 0 2px
+            width: 13px
+            height: 13px
+            border-radius: 6px
+            background-color: #ddd
+        input:checked + label
+            background-color: #c0301c
+
+.form
+    padding: 50px 0
+    .get
+        h2
+            font-size: 18rem
+            line-height: 30rem
+            color: #555
+            font-weight: 400
+            font-family: "Roboto Slab"
+            text-align: center
+        h2:after
+            content: ""
+            display: block
+            width: 50px
+            height: 2px
+            background: #555
+            margin: 20px auto
+
+    .formas
+        display: flex
+        padding: 50px 0
+        .contacts
+            width: 35%
+            .contact
+                >*
+                    text-align: left
+                h3
+                    display: inline
+                    font-size: 14rem
+                    line-height: 30rem
+                    text-transform: uppercase
+                    color: #555
+                    font-family: "Myriad Pro"
+        form
+            display: flex
+            align-items: baseline
+            flex-wrap: wrap
+            input,textarea
+                width: 40%
+                margin: 0 20px
+                font-size: 12rem
+                line-height: 20rem
+                padding: 10px 15px
+                text-transform: uppercase
+                color: #555
+                font-weight: 400
+                font-family: "Roboto Slab"
+                border: 1px solid #555
+            textarea
+                width: 85%
+                min-height: 120px
+                max-height: 250px
+                resize: vertical
+            input[type="submit"]
+                width: 20%
+                background: #fff
+            input:focus,textarea:focus
+                outline: none
+                border: 1px solid #c0301c
+            sup
+                color: #c0301c
+            p
+                font-size: 12px
+                line-height: 20px
+                color: #5f5f5f
+                font-weight: 400
+                font-family: "Roboto Slab"

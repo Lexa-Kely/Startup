@@ -1,5 +1,5 @@
 header
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/backheader.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/backheader.jpg")
     background-size: cover
     background-position: center
     padding: 20px 0
@@ -35,6 +35,9 @@ h1
         display: flex
         flex-wrap: wrap
         flex-direction: column
+        padding: 50px 0
+    +media(768)
+        padding: 100px 0
     > *
         padding: 15px 0
     h2
@@ -109,7 +112,6 @@ active_burger
 .burger span::after
     top: 15px
 
-
 .active_burger~.menu
     display: flex
     position: fixed
@@ -154,3 +156,37 @@ active_burger
 
     .active_burger~&
         display: block
+
+.popup-auth
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.6)
+    display: flex
+    justify-content: center
+    align-items: center
+
+.auth-content
+    background: #fff
+    padding: 20px
+    border-radius: 8px
+    text-align: center
+
+.blocks
+    display: flex
+    gap: 10px
+    margin: 20px 0
+
+.block
+    width: 50px
+    height: 50px
+    background: #ddd
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: grab
+
+    &.dragging
+        opacity: 0.5
